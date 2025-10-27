@@ -122,3 +122,54 @@ p {
 .incorrect {
     color: #F44336; /* 赤色 */
 }
+/* --- ここからスマホ表示用の設定 --- */
+
+/* 画面幅が600px以下の場合に適用 */
+@media (max-width: 600px) {
+
+    /* 画面の枠（UI全体） */
+    .screen {
+        margin: 10px; /* 外側の余白を狭くする */
+        padding: 20px; /* 内側の余白（グラスモーフィズムの枠内）も狭くする */
+    }
+
+    /* 見出し */
+    h1 {
+        font-size: 1.8em; /* 見出しを少し小さく */
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 1.5em; /* 結果の見出しも小さく */
+        margin-bottom: 20px;
+    }
+
+    /* 問題文 */
+    #quote-text {
+        font-size: 1.3em; /* 問題文を小さく */
+    }
+
+    /* ヒント */
+    #title-hint {
+        font-size: 0.9em; /* ヒントを小さく */
+        margin-bottom: 20px;
+    }
+
+    /* ボタン共通 */
+    .glass-button {
+        padding: 12px 20px; /* ボタンの厚みを薄くする */
+        font-size: 1em; /* ボタンの文字を少し小さく */
+    }
+
+    /* 選択肢ボタン */
+    .choice {
+        padding: 15px 15px; /* 選択肢の厚みを薄く */
+        font-size: 1em; /* 文字を少し小さく */
+    }
+
+    /* 正解・不正解のフィードバック */
+    #feedback {
+        font-size: 1.2em; /* フィードバックの文字を小さく */
+    }
+}
+
+/* --- スマホ表示用の設定ここまで --- */
