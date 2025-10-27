@@ -1,0 +1,124 @@
+/* 全体のリセットと背景画像 */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: #fff; /* 文字色を白に */
+    background-image: url('background.jpg'); /* 背景画像 */
+    background-size: cover; /* 画面全体に拡大 */
+    background-position: center; /* 中央に配置 */
+    background-repeat: no-repeat; /* 繰り返しなし */
+    display: flex; /* 画面中央に配置するため */
+    justify-content: center; /* 左右中央 */
+    align-items: center; /* 上下中央 */
+    min-height: 100vh; /* 画面いっぱいの高さ */
+    overflow: hidden; /* 画像がはみ出したら隠す */
+}
+
+/* 画面共通スタイル */
+.screen {
+    max-width: 700px; /* 最大幅を少し広めに */
+    margin: 20px;
+    padding: 30px; /* パディングを増やす */
+    border-radius: 15px; /* 角丸を大きく */
+    background: rgba(0, 0, 0, 0.6); /* 背景を濃い目に透過 */
+    backdrop-filter: blur(10px); /* 背景のグラスモーフィズム効果 */
+    -webkit-backdrop-filter: blur(10px); /* Safari対応 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 枠線 */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* 影 */
+    display: none; /* デフォルトでは非表示 */
+}
+
+.screen.active {
+    display: block; /* activeクラスが付いている画面のみ表示 */
+}
+
+h1, h2 {
+    color: #fff;
+    margin-bottom: 30px; /* 間隔を広げる */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字に影 */
+}
+
+p {
+    font-size: 1.2em; /* 文字を少し大きく */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#quote-text {
+    font-size: 1.6em; /* 問題文を大きく */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#title-hint {
+    font-size: 1em;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+/* グラスモーフィズムボタンのスタイル */
+.glass-button {
+    background: rgba(255, 255, 255, 0.2); /* 透過度を低めに (20%) */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* 枠線 */
+    backdrop-filter: blur(5px); /* 少しだけ背景をぼかす */
+    -webkit-backdrop-filter: blur(5px);
+    color: #fff;
+    padding: 15px 25px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease; /* ホバー時のアニメーション */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.3); /* ホバー時に少し透過度を上げる */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px); /* 少し浮き上がる */
+}
+
+/* 選択肢ボタン */
+.choice {
+    display: block;
+    width: calc(100% - 20px); /* 左右の余白を考慮 */
+    margin: 15px auto; /* 上下のマージンを調整 */
+    padding: 18px 20px; /* パディングを増やす */
+    font-size: 1.1em;
+    text-align: left; /* テキストを左寄せ */
+    background: rgba(255, 255, 255, 0.15); /* 選択肢ボタンもグラスモーフィズム風 */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.choice:hover:not([disabled]) {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.choice[disabled] {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* 正解・不正解時のフィードバック */
+#feedback {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 25px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.correct {
+    color: #4CAF50; /* 緑色 */
+}
+
+.incorrect {
+    color: #F44336; /* 赤色 */
+}
